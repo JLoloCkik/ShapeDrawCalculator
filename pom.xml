@@ -24,7 +24,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>ljankai.ShapeDrawCalculator</mainClass>
+                            <mainClass>ljankai.Ui.ShapeDrawCalculator</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
