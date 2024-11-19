@@ -2,11 +2,24 @@ package ljankai.Ui.Hotbar;
 
 import ljankai.Ui.Button;
 
-public class UndoClearHandler extends Button {
-    public UndoClearHandler(int x, int y, int width, int height, String label) {
-        super(x, y, width, height, label);
+import javax.swing.*;
+
+public class UndoClearHandler extends JButton implements Button {
+    public UndoClearHandler(String label) {
+        super(label);
     }
+
     public void undo(){}
     public void redo(){}
     public void clear(){}
+
+    @Override
+    public void draw() {
+
+    }
+
+    @Override
+    public void onClick() {
+
+    }
 }

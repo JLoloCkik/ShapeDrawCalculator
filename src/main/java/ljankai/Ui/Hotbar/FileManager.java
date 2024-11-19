@@ -2,12 +2,11 @@ package ljankai.Ui.Hotbar;
 
 import ljankai.Ui.Button;
 
+import javax.swing.*;
+import java.awt.event.ActionListener;
 import java.io.File;
 
-public class FileManager extends Button {
-    public FileManager(int x, int y, int width, int height, String label) {
-        super(x, y, width, height, label);
-    }
+public class FileManager extends JButton  implements Button {
 
     public void saveManager() {
 
@@ -15,5 +14,15 @@ public class FileManager extends Button {
     }
 
     public void loadManager() {
+    }
+
+    @Override
+    public void draw() {
+
+    }
+
+    @Override
+    public void onClick() {
+
     }
 }
