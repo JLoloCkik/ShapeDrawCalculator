@@ -16,10 +16,6 @@ public class FileManager extends JButton  implements Button {
     public void loadManager() {
     }
 
-    @Override
-    public void draw() {
-
-    }
 
     @Override
     public void onClick() {

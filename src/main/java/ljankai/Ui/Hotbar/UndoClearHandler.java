@@ -13,10 +13,6 @@ public class UndoClearHandler extends JButton implements Button {
     public void redo(){}
     public void clear(){}
 
-    @Override
-    public void draw() {
-
-    }
 
     @Override
     public void onClick() {
