@@ -8,14 +8,20 @@ public class Hotbar extends JPanel {
         JPanel hotbar = new JPanel();
         hotbar.setLayout(new BorderLayout());
 
-        JButton buyButton = new JButton("Buy");
-        Font font = new Font("Arial", Font.BOLD, 30);
-        buyButton.setFont(font);
-        buyButton.setPreferredSize(new Dimension(150, 60));
+        Save save = new Save();
+        Load load = new Load();
+        Undo undo = new Undo();
+        Redo redo = new Redo();
+        Clear clear = new Clear();
 
-        // Gomb hozzáadása a hotbar-ra
         JPanel buttonPanel = new JPanel();
-        buttonPanel.add(buyButton);
+
+        buttonPanel.add(save.showButton());
+        buttonPanel.add(load.showButton());
+        buttonPanel.add(undo.showButton());
+        buttonPanel.add(redo.showButton());
+        buttonPanel.add(clear.showButton());
+
         hotbar.add(buttonPanel, BorderLayout.WEST);
 
         hotbar.setBackground(Color.WHITE);
