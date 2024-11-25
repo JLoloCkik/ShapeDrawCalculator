@@ -6,8 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Display extends JFrame {
-    private int initialWidth = (int) (3840 / 1.4);
-    private int initialHeight = (int) (2160 / 1.4);
+    private int initialWidth = 2660;
+    private int initialHeight = 1540;
 
     JFrame frame = new JFrame();
 
