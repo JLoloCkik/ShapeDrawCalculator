@@ -22,13 +22,12 @@ public class DrawPanel
 
     private void addPoint(Point point) {
         int gridSize = getGridSpacing();
-        int x = ((point.x + gridSize / 2) / gridSize) * gridSize;
-        int y = ((point.y + gridSize / 2) / gridSize) * gridSize;
+        int xIndex = point.x / gridSize; // Relatív rácspozíció kiszámítása
+        int yIndex = point.y / gridSize;
 
-        points.add(new Point(x, y));
+        points.add(new Point(xIndex, yIndex));
         repaint();
     }
-
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -36,8 +35,13 @@ public class DrawPanel
         drawCoordinates(g);
 
         g.setColor(Color.RED);
+        int gridSize = getGridSpacing();
+
         for (Point point : points) {
-            g.fillOval(point.x , point.y , 10, 10);  // Kirajzol minden pontot
+            int x = point.x * gridSize;
+            int y = point.y * gridSize;
+
+            g.fillOval(x , y , 10, 10);
         }
     }
 
