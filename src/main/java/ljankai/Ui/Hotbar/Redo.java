@@ -1,6 +1,6 @@
 package ljankai.Ui.Hotbar;
 
-import ljankai.Draw.DrawPanel;
+import ljankai.Draw.PointDrawer;
 import ljankai.Ui.Button;
 
 import javax.swing.*;
@@ -12,10 +12,10 @@ public class Redo
         extends JButton
         implements Button {
 
-    private final DrawPanel drawPanel;
+    private final PointDrawer pointDrawer;
 
-    public Redo(DrawPanel drawPanel) {
-        this.drawPanel = drawPanel;
+    public Redo(PointDrawer pointDrawer) {
+        this.pointDrawer = pointDrawer;
 
         this.setText("Redo");
         this.setFont(hotbarFontStyle);
@@ -32,7 +32,7 @@ public class Redo
 
     @Override
     public void onClick() {
-        drawPanel.redoPoints();
-        drawPanel.repaint();
+        pointDrawer.redoPoints();
+        pointDrawer.repaint();
     }
 }

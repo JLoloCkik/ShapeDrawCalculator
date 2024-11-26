@@ -1,6 +1,6 @@
 package ljankai.Ui;
 
-import ljankai.Draw.DrawPanel;
+import ljankai.Draw.PointDrawer;
 import ljankai.Ui.Hotbar.Hotbar;
 
 import javax.swing.*;
@@ -17,13 +17,13 @@ public class Display extends JFrame {
         frame.setSize(initialWidth, initialHeight);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        DrawPanel drawPanel = new DrawPanel(); // Létrehozzuk a DrawPanel példányát
+        PointDrawer pointDrawer = new PointDrawer(); // Létrehozzuk a DrawPanel példányát
         Hotbar hotbar = new Hotbar();
 
         // A DrawPanel-t átadjuk a Hotbar-nak
         frame.setLayout(new BorderLayout());
-        frame.add(hotbar.addHotbar(drawPanel), BorderLayout.NORTH); // Hotbar-t itt hívjuk meg
-        frame.add(drawPanel, BorderLayout.CENTER);
+        frame.add(hotbar.addHotbar(pointDrawer), BorderLayout.NORTH); // Hotbar-t itt hívjuk meg
+        frame.add(pointDrawer, BorderLayout.CENTER);
 
         frame.setVisible(true);
     }

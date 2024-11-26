@@ -1,6 +1,6 @@
 package ljankai.Ui.Hotbar;
 
-import ljankai.Draw.DrawPanel;
+import ljankai.Draw.PointDrawer;
 import ljankai.Ui.Button;
 
 import javax.swing.*;
@@ -12,10 +12,10 @@ public class Undo
         extends JButton
         implements Button {
 
-    private final DrawPanel drawPanel;
+    private final PointDrawer pointDrawer;
 
-    public Undo(DrawPanel drawPanel) {
-        this.drawPanel = drawPanel;
+    public Undo(PointDrawer pointDrawer) {
+        this.pointDrawer = pointDrawer;
 
         this.setText("Undo");
         this.setFont(hotbarFontStyle);
@@ -32,7 +32,7 @@ public class Undo
 
     @Override
     public void onClick() {
-        drawPanel.undoPoints();
-        drawPanel.repaint();
+        pointDrawer.undoPoints();
+        pointDrawer.repaint();
     }
 }

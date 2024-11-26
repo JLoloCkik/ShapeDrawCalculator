@@ -1,21 +1,21 @@
 package ljankai.Ui.Hotbar;
 
-import ljankai.Draw.DrawPanel;
+import ljankai.Draw.PointDrawer;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class Hotbar extends JPanel {
-    public JPanel addHotbar(DrawPanel drawPanel) {
+    public JPanel addHotbar(PointDrawer pointDrawer) {
         JPanel hotbar = new JPanel();
         hotbar.setLayout(new BorderLayout());
 
         // A DrawPanel átadása a gomboknak
         Save save = new Save();
         Load load = new Load();
-        Undo undo = new Undo(drawPanel);
-        Redo redo = new Redo(drawPanel);
-        Clear clear = new Clear(drawPanel);  // Átadjuk a DrawPanel-t
+        Undo undo = new Undo(pointDrawer);
+        Redo redo = new Redo(pointDrawer);
+        Clear clear = new Clear(pointDrawer);  // Átadjuk a DrawPanel-t
 
         JPanel buttonPanel = new JPanel();
 

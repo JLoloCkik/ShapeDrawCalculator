@@ -1,6 +1,6 @@
 package ljankai.Ui.Hotbar;
 
-import ljankai.Draw.DrawPanel;
+import ljankai.Draw.PointDrawer;
 import ljankai.Ui.Button;
 
 import javax.swing.*;
@@ -11,10 +11,10 @@ import java.awt.event.ActionListener;
 public class Clear
         extends JButton
         implements Button {
-    private DrawPanel drawPanel;
+    private PointDrawer pointDrawer;
 
-    public Clear(DrawPanel drawPanel) {
-        this.drawPanel = drawPanel;
+    public Clear(PointDrawer pointDrawer) {
+        this.pointDrawer = pointDrawer;
 
         this.setText("Clear");
         this.setFont(hotbarFontStyle);
@@ -31,7 +31,7 @@ public class Clear
 
     @Override
     public void onClick() {
-        drawPanel.clearPoints();
-        drawPanel.repaint();
+        pointDrawer.clearPoints();
+        pointDrawer.repaint();
     }
 }
