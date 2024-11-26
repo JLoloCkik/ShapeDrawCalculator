@@ -4,13 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
+import java.awt.geom.Point2D;
 import java.util.ArrayList;
 
-public class DrawPanel
-        extends JPanel {
-    ArrayList<Point> points = new ArrayList<>();
-
+public class DrawPanel extends JPanel {
+    private ArrayList<Point> gridPoints = new ArrayList<>(); // Relatív koordináták tárolása
+    // Konstruktor létre hoz egy új pontot minden katintásnál
     public DrawPanel() {
         this.addMouseListener(new MouseAdapter() {
             @Override
@@ -20,14 +19,25 @@ public class DrawPanel
         });
     }
 
-    private void addPoint(Point point) {
-        int gridSize = getGridSpacing();
-        int xIndex = point.x / gridSize; // Relatív rácspozíció kiszámítása
-        int yIndex = point.y / gridSize;
+    private void addPoint(Point mousePoint) {
+        int unitSize = getUnitSize(); // Egységméret kiszámítása
+        int centerX = getWidth() / 2; // Origó X koordinátája
+        int centerY = getHeight() / 2; // Origó Y koordinátája
 
-        points.add(new Point(xIndex, yIndex));
-        repaint();
+        // Origótól való relatív pozíció kerekítéssel
+        int relX = (int) Math.round((double) (mousePoint.x - centerX) / unitSize);
+        int relY = (int) Math.round((double) (centerY - mousePoint.y) / unitSize);
+
+        Point newPoint = new Point(relX, relY);
+
+        // Pont hozzáadása, ha még nem létezik
+        if (!gridPoints.contains(newPoint)) {
+            gridPoints.add(newPoint);
+            repaint();
+        }
     }
+
+
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -35,51 +45,61 @@ public class DrawPanel
         drawCoordinates(g);
 
         g.setColor(Color.RED);
-        int gridSize = getGridSpacing();
+        int unitSize = getUnitSize();
+        int centerX = getWidth() / 2;
+        int centerY = getHeight() / 2;
 
-        for (Point point : points) {
-            int x = point.x * gridSize;
-            int y = point.y * gridSize;
+        // Pontok kirajzolása
+        for (Point gridPoint : gridPoints) {
+            int x = centerX + gridPoint.x * unitSize;
+            int y = centerY - gridPoint.y * unitSize; // Y tengely fordított
 
-            g.fillOval(x , y , 10, 10);
+            g.fillOval(x - 5, y - 5, 10, 10);
         }
     }
 
+    // Be rácsozás
     private void drawGrid(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         int width = getWidth();
         int height = getHeight();
-        int gridSize = getGridSpacing();
+        int unitSize = getUnitSize();
+        int centerX = width / 2;
+        int centerY = height / 2;
 
         g2.setColor(Color.LIGHT_GRAY);
         g2.setStroke(new BasicStroke(1));
 
-        for (int i = 0; i < width; i += gridSize) {
-            g2.drawLine(i, 0, i, height); // Függőleges rácsvonalak rajzolása
+        // Függőleges rácsvonalak
+        for (int x = centerX % unitSize; x < width; x += unitSize) {
+            g2.drawLine(x, 0, x, height);
         }
-        for (int i = 0; i < height; i += gridSize) {
-            g2.drawLine(0, i, width, i); // Vízszintes rácsvonalak rajzolása
+
+        // Vízszintes rácsvonalak
+        for (int y = centerY % unitSize; y < height; y += unitSize) {
+            g2.drawLine(0, y, width, y);
         }
     }
-
-
+    // X Y tengely berajzolása
     private void drawCoordinates(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         int width = getWidth();
         int height = getHeight();
-        int gridSize = getGridSpacing();
-        int centerX = (width / 2 / gridSize) * gridSize;
-        int centerY = (height / 2 / gridSize) * gridSize;
+        int centerX = width / 2;
+        int centerY = height / 2;
 
         g2.setColor(Color.BLACK);
         g2.setStroke(new BasicStroke(3));
 
+        // X tengely
         g2.drawLine(0, centerY, width, centerY);
+
+        // Y tengely
         g2.drawLine(centerX, 0, centerX, height);
     }
 
-    private int getGridSpacing() {
-        return Math.max(1, getWidth() / 60);
+    //Maximum távolság a koordináta rendszer elemei között
+    private int getUnitSize() {
+        return Math.max(40, getWidth() / 60);
     }
-
 }
