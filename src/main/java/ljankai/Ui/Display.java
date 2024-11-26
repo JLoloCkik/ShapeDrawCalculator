@@ -17,11 +17,12 @@ public class Display extends JFrame {
         frame.setSize(initialWidth, initialHeight);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        Hotbar hotbar = new Hotbar();
         DrawPanel drawPanel = new DrawPanel(); // Létrehozzuk a DrawPanel példányát
+        Hotbar hotbar = new Hotbar();
 
+        // A DrawPanel-t átadjuk a Hotbar-nak
         frame.setLayout(new BorderLayout());
-        frame.add(hotbar.addHotbar(), BorderLayout.NORTH);
+        frame.add(hotbar.addHotbar(drawPanel), BorderLayout.NORTH); // Hotbar-t itt hívjuk meg
         frame.add(drawPanel, BorderLayout.CENTER);
 
         frame.setVisible(true);

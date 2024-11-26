@@ -1,5 +1,6 @@
 package ljankai.Ui.Hotbar;
 
+import ljankai.Draw.DrawPanel;
 import ljankai.Ui.Button;
 
 import javax.swing.*;
@@ -11,23 +12,27 @@ public class Redo
         extends JButton
         implements Button {
 
-    public JButton showButton() {
-        JButton redoButton = new JButton("Redo");
-        redoButton.setFont(hotbarFontStyle);
-        redoButton.setPreferredSize(new Dimension(150, 60));
+    private final DrawPanel drawPanel;
 
-        redoButton.addActionListener(new ActionListener() {
+    public Redo(DrawPanel drawPanel) {
+        this.drawPanel = drawPanel;
+
+        this.setText("Redo");
+        this.setFont(hotbarFontStyle);
+        this.setPreferredSize(new Dimension(150, 60));
+
+        // ActionListener beállítása
+        this.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 onClick();
             }
         });
-
-        return redoButton;
     }
 
     @Override
     public void onClick() {
-
+        drawPanel.redoPoints();
+        drawPanel.repaint();
     }
 }

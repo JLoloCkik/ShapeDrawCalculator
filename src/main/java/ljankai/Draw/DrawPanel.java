@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class DrawPanel extends JPanel {
     private ArrayList<Point> gridPoints = new ArrayList<>(); // Relatív koordináták tárolása
+    private ArrayList<Point> undoList = new ArrayList<>();
     // Konstruktor létre hoz egy új pontot minden katintásnál
     public DrawPanel() {
         this.addMouseListener(new MouseAdapter() {
@@ -37,6 +38,17 @@ public class DrawPanel extends JPanel {
         }
     }
 
+    public void clearPoints() {
+        gridPoints.clear();
+    }
+
+    public void undoPoints() {
+        undoList.add(gridPoints.remove(gridPoints.size() - 1));
+    }
+
+    public void redoPoints() {
+        gridPoints.add(undoList.remove(undoList.size() - 1));
+    }
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -80,6 +92,7 @@ public class DrawPanel extends JPanel {
             g2.drawLine(0, y, width, y);
         }
     }
+
     // X Y tengely berajzolása
     private void drawCoordinates(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;

@@ -1,5 +1,6 @@
 package ljankai.Ui.Hotbar;
 
+import ljankai.Draw.DrawPanel;
 import ljankai.Ui.Button;
 
 import javax.swing.*;
@@ -10,26 +11,27 @@ import java.awt.event.ActionListener;
 public class Clear
         extends JButton
         implements Button {
+    private DrawPanel drawPanel;
 
+    public Clear(DrawPanel drawPanel) {
+        this.drawPanel = drawPanel;
 
+        this.setText("Clear");
+        this.setFont(hotbarFontStyle);
+        this.setPreferredSize(new Dimension(150, 60));
 
-    public JButton showButton() {
-        JButton clearButton = new JButton("Clear");
-        clearButton.setFont(hotbarFontStyle);
-        clearButton.setPreferredSize(new Dimension(150, 60));
-
-        clearButton.addActionListener(new ActionListener() {
+        // ActionListener beállítása
+        this.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                onClick();
+                onClick(); // Ha rákattintanak, törli a pontokat
             }
         });
-
-        return clearButton;
     }
 
     @Override
     public void onClick() {
-
+        drawPanel.clearPoints();
+        drawPanel.repaint();
     }
 }
