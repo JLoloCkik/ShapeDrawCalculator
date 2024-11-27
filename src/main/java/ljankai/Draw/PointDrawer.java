@@ -4,17 +4,19 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
+
+import java.util.LinkedList;
 
 public class PointDrawer extends JPanel {
-    private ArrayList<Point> gridPoints = new ArrayList<>(); // Relatív koordináták tárolása
-    private ArrayList<Point> undoList = new ArrayList<>();
+    private LinkedList<Point> gridPoints = new LinkedList<>(); // Relatív koordináták tárolása
+    private LinkedList<Point> undoList = new LinkedList<>(); // Undo eredményét tárolja
     private GridDrawer gridDrawer;  // Új GridDrawer példány hozzáadása
+    private EdgeDrawer edgeDrawer;
 
     // Konstruktor létre hoz egy új pontot minden kattintásnál
     public PointDrawer() {
         gridDrawer = new GridDrawer();  // Inicializáljuk a GridDrawer-t
-
+        edgeDrawer = new EdgeDrawer();
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -34,11 +36,14 @@ public class PointDrawer extends JPanel {
 
         Point newPoint = new Point(relX, relY);
 
-        // Pont hozzáadása, ha még nem létezik
-        if (!gridPoints.contains(newPoint)) {
-            gridPoints.add(newPoint);
-            repaint();
+        gridPoints.add(newPoint);
+        if(gridPoints.size() > 1){
+            Point lastPoint = gridPoints.get(gridPoints.size() - 2);
+            edgeDrawer.addEdge(lastPoint, newPoint);
         }
+
+        repaint();
+
     }
 
     public void clearPoints() {
@@ -47,17 +52,15 @@ public class PointDrawer extends JPanel {
 
     public void undoPoints() {
         if (!gridPoints.isEmpty()) {
-            undoList.add(gridPoints.remove(gridPoints.size() - 1));
+            undoList.addLast(gridPoints.removeLast());
         }
     }
 
     public void redoPoints() {
         if (!undoList.isEmpty()) {
-            gridPoints.add(undoList.remove(undoList.size() - 1));
+            gridPoints.addLast(undoList.removeLast());
         }
     }
-
-
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -66,11 +69,16 @@ public class PointDrawer extends JPanel {
         int unitSize = getUnitSize();
         int width = getWidth();
         int height = getHeight();
+        int centerX = width / 2;
+        int centerY = height / 2;
 
         // Rács és koordináták kirajzolása
         gridDrawer.drawGrid(g, width, height, unitSize);
         gridDrawer.drawCoordinates(g, width, height);
 
+        if (gridPoints.size() > 1) {
+            edgeDrawer.drawEdges(g, unitSize, centerX, centerY);
+        }
         g.setColor(Color.RED);
 
         // Pontok kirajzolása
@@ -78,12 +86,12 @@ public class PointDrawer extends JPanel {
             int x = width / 2 + gridPoint.x * unitSize;
             int y = height / 2 - gridPoint.y * unitSize; // Y tengely fordított
 
-            g.fillOval(x - 5, y - 5, 10, 10);
+            g.fillOval(x - 5, y - 5, 15, 15);
         }
     }
 
     // Maximum távolság a koordináta rendszer elemei között
     private int getUnitSize() {
-        return Math.max(40, getWidth() / 60);
+        return Math.max(30, getWidth() / 60);
     }
 }
