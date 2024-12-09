@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3f7f12ba-168d-41b9-ab2b-e8e4f645f00a" name="Changes" comment="Line and EdgeDrawer">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ljankai/Draw/EdgeDrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ljankai/Draw/EdgeDrawer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ljankai/Draw/Line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ljankai/Draw/Line.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ljankai/Draw/PointDrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ljankai/Draw/PointDrawer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ljankai/Ui/Hotbar/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ljankai/Ui/Hotbar/Clear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ljankai/Ui/Hotbar/Hotbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ljankai/Ui/Hotbar/Hotbar.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;JLoloCkik&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/JLoloCkik/ShapeDrawCalculator.git&quot;,
+    &quot;accountId&quot;: &quot;3b5ebb62-9c2e-4c23-ba56-87eb506d1474&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2pOcn90ly4mdISNd9noAuu2dOMp" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ShapeDrawCalculator.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/lolo/Programing/Java/ShapeDrawCalculatorApp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="ShapeDrawCalculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ljankai.Ui.ShapeDrawCalculator" />
+      <module name="tutorial" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ljankai.Ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ShapeDrawCalculator" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="point">
+      <option name="closed" value="true" />
+      <created>1732566371686</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732566371686</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3f7f12ba-168d-41b9-ab2b-e8e4f645f00a" name="Changes" comment="point" />
+      <created>1732640728510</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732640728510</updated>
+      <workItem from="1732640729770" duration="8000" />
+      <workItem from="1732644738029" duration="7732000" />
+      <workItem from="1732652481244" duration="2260000" />
+      <workItem from="1732655037796" duration="263000" />
+      <workItem from="1732711041315" duration="7876000" />
+      <workItem from="1733047199560" duration="52000" />
+      <workItem from="1733767568029" duration="5232000" />
+    </task>
+    <task id="LOCAL-00002" summary="relative point">
+      <option name="closed" value="true" />
+      <created>1732645681241</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732645681241</updated>
+    </task>
+    <task id="LOCAL-00003" summary="relative point and coordinate">
+      <option name="closed" value="true" />
+      <created>1732650204134</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732650204134</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add function undo, clear, redo button">
+      <option name="closed" value="true" />
+      <created>1732652394650</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732652394650</updated>
+    </task>
+    <task id="LOCAL-00005" summary="class separate">
+      <option name="closed" value="true" />
+      <created>1732653165988</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732653165988</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Line and EdgeDrawer">
+      <option name="closed" value="true" />
+      <created>1732717953833</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732717953833</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="point" />
+    <MESSAGE value="relative point" />
+    <MESSAGE value="relative point and coordinate" />
+    <MESSAGE value="add function undo, clear, redo button" />
+    <MESSAGE value="class separate" />
+    <MESSAGE value="Line and EdgeDrawer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Line and EdgeDrawer" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="  private LinkedList&lt;Line&gt; lines = new LinkedList&lt;Line&gt;();" />
+        <watch expression="gridPoints" />
+      </configuration>
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/ljankai/Draw/PointDrawer.java" line="9">
+        <watch expression="gridPoints" />
+      </inline-watch>
+    </watches-manager>
+  </component>
+</project>

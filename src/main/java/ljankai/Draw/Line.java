@@ -11,11 +11,21 @@ public class Line {
         this.end = end;
     }
 
+    public void clear() {
+        start = null;
+        end = null;
+    }
+
     public Point getStart() {
         return start;
     }
 
     public Point getEnd() {
         return end;
+    }
+
+    @Override
+    public String toString() {
+        return "Line{start=" + start + ", end=" + end + "}";
     }
 }

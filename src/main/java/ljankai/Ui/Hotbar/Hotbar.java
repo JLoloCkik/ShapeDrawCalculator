@@ -1,33 +1,35 @@
-package ljankai.Ui.Hotbar;
+    package ljankai.Ui.Hotbar;
 
-import ljankai.Draw.PointDrawer;
+    import ljankai.Draw.EdgeDrawer;
+    import ljankai.Draw.PointDrawer;
 
-import javax.swing.*;
-import java.awt.*;
+    import javax.swing.*;
+    import java.awt.*;
 
-public class Hotbar extends JPanel {
-    public JPanel addHotbar(PointDrawer pointDrawer) {
-        JPanel hotbar = new JPanel();
-        hotbar.setLayout(new BorderLayout());
+    public class Hotbar extends JPanel {
+        public JPanel addHotbar(PointDrawer pointDrawer) {
+            JPanel hotbar = new JPanel();
+            hotbar.setLayout(new BorderLayout());
+            EdgeDrawer edgeDrawer = new EdgeDrawer();
 
-        // A DrawPanel átadása a gomboknak
-        Save save = new Save();
-        Load load = new Load();
-        Undo undo = new Undo(pointDrawer);
-        Redo redo = new Redo(pointDrawer);
-        Clear clear = new Clear(pointDrawer);  // Átadjuk a DrawPanel-t
+            // A DrawPanel átadása a gomboknak
+            Save save = new Save();
+            Load load = new Load();
+            Undo undo = new Undo(pointDrawer);
+            Redo redo = new Redo(pointDrawer);
+            Clear clear = new Clear(pointDrawer, edgeDrawer);  // Átadjuk a DrawPanel-t
 
-        JPanel buttonPanel = new JPanel();
+            JPanel buttonPanel = new JPanel();
 
-        buttonPanel.add(save.showButton());
-        buttonPanel.add(load.showButton());
-        buttonPanel.add(undo);
-        buttonPanel.add(redo);
-        buttonPanel.add(clear);
+            buttonPanel.add(save.showButton());
+            buttonPanel.add(load.showButton());
+            buttonPanel.add(undo);
+            buttonPanel.add(redo);
+            buttonPanel.add(clear);
 
-        hotbar.add(buttonPanel, BorderLayout.WEST);
+            hotbar.add(buttonPanel, BorderLayout.WEST);
 
-        hotbar.setBackground(Color.WHITE);
-        return hotbar;
+            hotbar.setBackground(Color.WHITE);
+            return hotbar;
+        }
     }
-}

@@ -1,5 +1,6 @@
 package ljankai.Ui.Hotbar;
 
+import ljankai.Draw.EdgeDrawer;
 import ljankai.Draw.PointDrawer;
 import ljankai.Ui.Button;
 
@@ -12,9 +13,11 @@ public class Clear
         extends JButton
         implements Button {
     private PointDrawer pointDrawer;
+    private EdgeDrawer edgeDrawer;
 
-    public Clear(PointDrawer pointDrawer) {
+    public Clear(PointDrawer pointDrawer, EdgeDrawer edgeDrawer) {
         this.pointDrawer = pointDrawer;
+        this.edgeDrawer = edgeDrawer;
 
         this.setText("Clear");
         this.setFont(hotbarFontStyle);
