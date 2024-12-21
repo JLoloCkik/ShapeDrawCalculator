@@ -7,6 +7,7 @@ public class EdgeDrawer {
     private Line firstLine;
     private Line lastLine;
     private LinkedList<Line> lines = new LinkedList<Line>();
+    private LinkedList<Line> undoLines = new LinkedList<Line>();
 
     public void addEdge(Point start, Point end) {
         lines.add(new Line(start, end));
@@ -41,10 +42,20 @@ public class EdgeDrawer {
         }
     }
 
-    // Vonalak törlése
     public void clearLines() {
         lines.clear();
         firstLine = null;
         lastLine = null;
+    }
+
+    public void undoLastLine() {
+        if (!lines.isEmpty()) {
+            undoLines.add(lines.removeLast());
+        }
+    }
+    public void redoLastLine() {
+        if (!undoLines.isEmpty()) {
+            lines.add(undoLines.removeLast());
+        }
     }
 }

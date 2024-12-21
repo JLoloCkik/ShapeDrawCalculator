@@ -47,7 +47,7 @@ public class PointDrawer extends JPanel {
     // Pontok törlése
     public void clearPoints() {
         gridPoints.clear();
-        edgeDrawer.clearLines();  // A vonalak törlése is megtörténik
+        edgeDrawer.clearLines();
         repaint();
     }
 
@@ -55,7 +55,7 @@ public class PointDrawer extends JPanel {
     public void undoPoints() {
         if (!gridPoints.isEmpty()) {
             undoList.addLast(gridPoints.removeLast());
-            edgeDrawer.clearLines();  // A vonalak is törlődnek
+            edgeDrawer.undoLastLine();
             repaint();
         }
     }
@@ -64,7 +64,7 @@ public class PointDrawer extends JPanel {
     public void redoPoints() {
         if (!undoList.isEmpty()) {
             gridPoints.addLast(undoList.removeLast());
-            edgeDrawer.clearLines();  // A vonalak is törlődnek
+            edgeDrawer.redoLastLine();
             repaint();
         }
     }
